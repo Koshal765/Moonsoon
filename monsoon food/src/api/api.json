@@ -1,0 +1,96 @@
+[
+  {
+    "id": 0,
+    "dishName": "Chai",
+    "Ingredients": ["Milk", "Tea Leaves", "Ginger", "Cardamom", "Sugar"],
+    "description": "Warm masala chai with cardamom & ginger.",
+    "Steps": "Boil water with spices, add milk, add tea leaves & simmer.",
+    "image": "https://images.unsplash.com/photo-1625033405953-f20401c7d848?q=80&w=600",
+    "tags": ["beverage", "chai", "spicy"],
+    "link": "https://youtube.com/shorts/6DCRQ0wx1tg?si=XuBy0bTtYvCDs4t7"
+  },
+  {
+    "id": 1,
+    "dishName": "Samosa",
+    "Ingredients": [
+      "Boiled Potato",
+      "Maida",
+      "Ginger-Garlic Paste",
+      "Red Chilli Powder",
+      "Salt",
+      "Cumin Seeds"
+    ],
+    "description": "Crispy fried samosa stuffed with spicy potato filling.",
+    "Steps": "Prepare dough with maida, make potato stuffing, shape into cones, and deep fry.",
+    "image": "https://plus.unsplash.com/premium_photo-1695297516676-04a259917c03?q=80&w=600",
+    "tags": ["snacks", "fried", "spicy"],
+    "link": "https://youtube.com/shorts/BXZzWg7IHms?si=fvPEtQRD2X0enTkp"
+  },
+  {
+    "id": 2,
+    "dishName": "Maggi",
+    "Ingredients": ["Maggi Noodles", "Water", "Vegetables", "Salt", "Spices"],
+    "description": "2-minute masala maggi, perfect for rainy evenings.",
+    "Steps": "Boil water, add masala and noodles, cook with veggies.",
+    "image": "https://images.unsplash.com/photo-1589227365423-d87e646beaac?q=80&w=600",
+    "tags": ["snacks", "quick", "spicy"],
+    "link": "https://youtu.be/EKPAfUCn_Jo?si=e0iTwyHWZRYoRcab"
+  },
+  {
+    "id": 3,
+    "dishName": "Pakora",
+    "Ingredients": ["Gram Flour", "Onions", "Chilli Powder", "Salt", "Green Chillies"],
+    "description": "Crunchy onion pakoras, a monsoon favorite.",
+    "Steps": "Mix ingredients into batter, deep fry till golden brown.",
+    "image": "https://images.unsplash.com/photo-1601050690597-df7c61c42c2f?q=80&w=600",
+    "tags": ["snacks", "fried", "monsoon"],
+    "link": "https://youtu.be/IbIvhpKZxvQ?si=F9VUMZGpBNL4U3P0"
+  },
+  {
+    "id": 4,
+    "dishName": "Corn Bhel",
+    "Ingredients": [
+      "Boiled Sweet Corn",
+      "Onions",
+      "Tomatoes",
+      "Green Chillies",
+      "Lemon Juice",
+      "Chaat Masala"
+    ],
+    "description": "Tangy corn bhel mixed with spices and lemon juice.",
+    "Steps": "Mix boiled corn with spices, lemon, onions, and tomatoes.",
+    "image": "https://images.unsplash.com/photo-1627308595170-bc85a76b024e?q=80&w=600",
+    "tags": ["snacks", "healthy", "street food"],
+    "link": "https://youtu.be/lvR2gw2gYxg?si=V4qhlx0QXcCgWxxv"
+  },
+  {
+    "id": 5,
+    "dishName": "Hot Soup",
+    "Ingredients": ["Vegetables", "Garlic", "Ginger", "Pepper", "Salt", "Water"],
+    "description": "Warm vegetable soup, comforting for rainy weather.",
+    "Steps": "Boil veggies with spices, blend, and simmer.",
+    "image": "https://images.unsplash.com/photo-1604908811146-30ab99f0c890?q=80&w=600",
+    "tags": ["soup", "healthy", "monsoon"],
+    "link": "https://youtu.be/qEoZXZcDcIU?si=fdpOKAfxfW4QpBpl"
+  },
+  {
+    "id": 6,
+    "dishName": "Paneer Tikka",
+    "Ingredients": ["Paneer", "Yogurt", "Ginger-Garlic Paste", "Spices", "Capsicum", "Onions"],
+    "description": "Grilled paneer marinated with yogurt & spices.",
+    "Steps": "Marinate paneer cubes, grill with veggies on skewers.",
+    "image": "https://images.unsplash.com/photo-1603898037225-4d8e8d95568a?q=80&w=600",
+    "tags": ["snacks", "tandoor", "spicy"],
+    "link": "https://youtu.be/6xXbH7do33Q?si=rs6PZqC8g2L2XjD9"
+  },
+  {
+    "id": 7,
+    "dishName": "Bhutta (Roasted Corn)",
+    "Ingredients": ["Corn on the Cob", "Salt", "Lemon", "Chilli Powder"],
+    "description": "Street-style roasted bhutta with tangy masala.",
+    "Steps": "Roast corn on flame, rub with masala and lemon.",
+    "image": "https://images.unsplash.com/photo-1600628422012-50f1e2e63085?q=80&w=600",
+    "tags": ["street food", "corn", "monsoon"],
+    "link": "https://youtu.be/F-r_2BEmp6I?si=XOk5cizJQevsX6-8"
+  }
+]
