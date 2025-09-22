@@ -78,7 +78,7 @@ export default function AddRecipeForm() {
 
   return (
     <div className="w-50 mx-auto p-3">
-      <h2 className="text-center mb-3">Upload Recipe📜</h2>
+      <h2 className="text-center mb-3 fw-bold">Upload Recipe📜</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="navbar navbar-expand-lg navbar-dark bg-warning"
+        className="navbar navbar-expand-lg navbar-dark bg-warning sticky-top"
         style={{
           
           height: "80px",
@@ -29,22 +29,27 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse  " id="nav">
-            <ul className="navbar-nav ms-auto fs-4 fw-semibold ">
+            <ul className="navbar-nav ms-auto fs-5 fw-semibold bg-warning bg-opacity-75 rounded-4 p-2 ">
               <li className="nav-item">
                 <Link className="nav-link text-white" to="/">
-                  🏡Home
+                  Home🏡
                 </Link>
               </li>
-              <li className="nav-item ms-3">
+              <li className="nav-item ">
                 <button
                   className="btn btn-link nav-link text-white"
                   to="/add-recipe"
                   onClick={() => navigate("/add-recipe")}
-                >
-                 ⬆️ Upload Recipe
+                >Upload Recipe⬆️
+                
                 </button>
               </li>
-              <li className="nav-item ms-3">
+              <li className="nav-item">
+                <Link className="nav-link text-white" to="/my-recipes">
+                  My Recipes
+                </Link>
+              </li>
+              <li className="nav-item ">
                 <button
                   className="btn btn-link nav-link text-white"
                   to="/login"

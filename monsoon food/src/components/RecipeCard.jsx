@@ -4,6 +4,7 @@ import Banner1 from "../assets/Banner.png";
 import Chai from "../assets/Chai.jpg";
 import Banner3 from "../assets/VadaPav.png";
 import recipesData from "../api/api.json";
+import "../App.css"; 
 
 const RecipeCard = () => {
   const [recipes, setRecipes] = useState([]);
@@ -40,13 +41,14 @@ const RecipeCard = () => {
     const filtered = recipes.filter((r) =>
       String(r.dishName || "")
         .toLowerCase()
-        .includes(searchText.toLowerCase())
+        .includes(searchText.toLowerCase() ) ||
+        r.tags.some(tag => tag.toLowerCase().includes(searchText.toLowerCase()))
     );
     setDisplayedRecipes(filtered);
   };
 
   return (
-    <div className="align-items-center justify-content-around d-flex flex-column  mt-3  w-100 px-3">
+    <div className="align-items-center justify-content-around d-flex flex-column">
       <div className="container-fluid p-0 border border-warning rounded-bottom ">
         <div
           id="heroCarousel"
@@ -156,13 +158,13 @@ const RecipeCard = () => {
       </div>
 
       <form className="w-100 mt-5" onSubmit={handleSubmit}>
-        <div className="d-flex justify-content-between align-items-center w-100">
+        <div className="d-flex justify-content-between align-items-center w-100  mb-5 ">
           <div>
-            <div className="d-flex align-content-center" style={{width:"260px"}} >
-         <label>Filter by Tag</label>  
-          <select className="form-select border border-bg-warning" style={{ maxWidth: "100px" }}>
+            <div className="d-flex align-items-center justify-content-between border" style={{width:"230px"}} >
+         <h5 className="mt-2" >Filter by Tag</h5>  
+          <select className="form-select border border-bg-warning " style={{ maxWidth: "100px"}} value={searchText} onChange={(e) => setSearchText(e.target.value)}>
                
-              <option>Chai</option>
+              <option>Beverages</option>
               <option>Spicy</option>
               <option>Snacks</option>
             </select>
@@ -181,7 +183,7 @@ const RecipeCard = () => {
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
             />
-            <button type="submit" className="btn btn-primary bg-warning border-0 rounded-5 fs-4 fw-semibold">
+            <button type="submit" className="btn btn-primary bg-warning border-0 rounded-5 fs-4 fw-semibold " >
               Search
             </button>
           </div>
@@ -196,12 +198,14 @@ const RecipeCard = () => {
         {displayedRecipes.map((recipe) => (
           
           <div className="col " key={recipe.id}>
-            <div className="card h-100 shadow-sm custom-card shadow-lg"style={{borderRadius:"25px" }} >
+            <div className="card h-100 custom-card shadow-lg  border-2 border-warning"style={{borderRadius:"35px" , hover: {transform: "scale(1.05)" }
+            }} 
+>
 
               {recipe.image && (
                 <img
                   src={recipe.image}
-                  className="card-img-top rounded-top-4" 
+                  className="card-img-top rounded-top-5" 
                   alt={recipe.dishName}
                   style={{ height: "200px", objectFit: "cover" }}
                 />
@@ -209,27 +213,27 @@ const RecipeCard = () => {
               <div>
               <div className="card-body box" >
                 <h5 className="card-title fw-bold fs-2">{recipe.dishName}</h5>
-                <p className="card-text"><span className=" fw-semibold">Ingredients:</span>{recipe.Ingredients.join(",")}</p>
-                <p className="card-text "><span className="fw-semibold">Tags:</span>{recipe.tags}</p>
+                <p className="card-text"><span className=" fw-semibold">Ingredients: </span>{recipe.Ingredients.join(" , ")}</p>
+                <p className="card-text "><span className="fw-semibold">Tags: </span>{recipe.tags.join(" , ")}</p>
                 <p className="card-text "><span className="fw-semibold">Description:</span>{recipe.description}</p>
-                 <p className="card-text "><span className="fw-semibold">Link:</span><a href="{recipe.link}" target="blank" style={{fontSize:"12px"}}> {recipe.link}</a></p>
+                 <p className="card-text "><span className="fw-semibold">Link:</span><a href={recipe.link} target="blank" style={{fontSize:"12px"}}> {recipe.link}</a></p>
               </div>
               </div>
-              <div className="d-flex">
+              <div className="d-flex mt-auto">
               <button
-                className="btn btn-outline-primary btn-sm w-25 mx-3 mb-3"
+                className="btn  btn-sm  mx-3 mb-3 border-0"
                 onClick={() => toggleLike(recipe.id)}
                 type="button"
               >
                 {likes[recipe.id] ? (
                   <>
-                    Liked <span style={{ color: "red" }}>❤️</span>
+                   <span className="fs-2">❤️</span>
                   </>
                 ) : (
-                  <>Like🤍</>
+                  <span className="fs-2">🤍</span>
                 )}
               </button>
-              <button  className="btn btn-outline-primary btn-sm w-25 mx-3 mb-3">Commment</button>
+              <button  className="btn border-0 btn-sm  mx-3 mb-3 fs-4">📂</button>
               </div>
             </div>
           </div>

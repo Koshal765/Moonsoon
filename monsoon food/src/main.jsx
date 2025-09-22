@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import App from "./App.jsx";
 import RecipeCard from "./components/RecipeCard.jsx";
 import AddRecipeForm from "./components/AddRecipeForm.jsx";
+import MyRecipes from "./components/MyRecipes.jsx";
 
 const appRouter = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/add-recipe",
         element:<AddRecipeForm/>
+      },
+      {
+        path: "/my-recipes",
+        element:<MyRecipes/>
       }
     ],
   },
