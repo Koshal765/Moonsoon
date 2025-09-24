@@ -2,11 +2,11 @@
   {
     "id": 0,
     "dishName": "Chai",
-    "Ingredients": ["Milk", "Tea Leaves", "Ginger", "Cardamom", "Sugar"],
+    "Ingredients": ["Milk", "Tea Leaves", "Ginger", "Cardamom", "Sugar" ],
     "description": "Warm masala chai with cardamom & ginger.",
     "Steps": "Boil water with spices, add milk, add tea leaves & simmer.",
     "image": "https://images.unsplash.com/photo-1625033405953-f20401c7d848?q=80&w=600",
-    "tags": ["beverage", "chai","sweet"],
+    "tags": ["beverages", "chai","sweet"],
     "link": "https://youtube.com/shorts/6DCRQ0wx1tg?si=amUuHv79vZkfPgf4"
   },
   {
@@ -70,7 +70,7 @@
     "description": "Warm vegetable soup, comforting for rainy weather.",
     "Steps": "Boil veggies with spices, blend, and simmer.",
     "image": "https://images.stockcake.com/public/c/4/5/c45ca256-aa35-4bdd-b3e6-d60770447ad7_large/steaming-hot-soup-stockcake.jpg",
-    "tags": ["soup", "healthy", "monsoon"],
+    "tags": ["soup", "healthy", "monsoon","beverages"],
     "link": "https://youtube.com/shorts/7WqJRisl5W8?si=Ilm27UtjQ2oXR87T"
   },
   {

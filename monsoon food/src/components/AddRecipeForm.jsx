@@ -119,8 +119,10 @@ export default function AddRecipeForm() {
           className="form-select mb-2"
         >
           <option>Spicy</option>
-          <option>Chai</option>
+          <option>Beverages</option>
           <option>Snacks</option>
+          <option>Heallthy</option>
+          
         </select>
         <input
           type="file"

@@ -11,20 +11,22 @@ const RecipeCard = () => {
   const [displayedRecipes, setDisplayedRecipes] = useState([]);
   const [likes, setLikes] = useState({});
   const [searchText, setSearchText] = useState("");
+  const [savedRecipes, setSavedRecipes] = useState([]); // added
 
 
   useEffect(() => {
+    setRecipes(recipesData);
+    setDisplayedRecipes(recipesData);
+    const likesInit = recipesData.reduce((acc, r) => {
+      acc[r.id] = false;
+      return acc;
+    }, {});
+    setLikes(likesInit);
 
-        setRecipes(recipesData);
-        setDisplayedRecipes(recipesData);
-        const likesInit = recipesData.reduce((acc, r) => {
-          acc[r.id] = false;
-          return acc;
-        }, {});
-        setLikes(likesInit);
-      }
-  , [])
-;
+    const saved = JSON.parse(localStorage.getItem("savedRecipes")) || []; //added
+    setSavedRecipes(saved); // ✅ added
+  }, []);
+
 
   const toggleLike = (id) => {
     setLikes((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -46,6 +48,20 @@ const RecipeCard = () => {
     );
     setDisplayedRecipes(filtered);
   };
+//  save recepie to local storage
+   const handleSave = (recipe) => {   //added
+    const updated = [...savedRecipes, recipe]; //added
+    setSavedRecipes(updated); // added
+    localStorage.setItem("savedRecipes", JSON.stringify(updated)); //added
+    window.dispatchEvent(new Event("savedRecipesUpdated")); // added  
+  };  // added
+
+function shareToWhatsapp(dishName, link) {
+  const text = `${dishName} - Check out this recipe: ${link}`;
+  const encodedText = encodeURIComponent(text); // Encode text for URL
+  const url = `https://wa.me/?text=${encodedText}`;
+  window.open(url, "_blank"); // Opens in a new tab
+}
 
   return (
     <div className="align-items-center justify-content-around d-flex flex-column">
@@ -162,11 +178,12 @@ const RecipeCard = () => {
           <div>
             <div className="d-flex align-items-center justify-content-between border" style={{width:"230px"}} >
          <h5 className="mt-2" >Filter by Tag</h5>  
-          <select className="form-select border border-bg-warning " style={{ maxWidth: "100px"}} value={searchText} onChange={(e) => setSearchText(e.target.value)}>
-               
-              <option>Beverages</option>
-              <option>Spicy</option>
-              <option>Snacks</option>
+          <select className="form-select border border-bg-warning fs-5 " style={{ maxWidth: "100px"}} value={searchText} onChange={(e) => setSearchText(e.target.value)}>
+               <option value="">All</option>
+              <option value="Beverages">Beverages</option>
+              <option value="Spicy">Spicy</option>
+              <option value="Snacks">Snacks</option>
+              <option value="Healthy">Healthy</option>
             </select>
             </div>
           </div>
@@ -179,9 +196,9 @@ const RecipeCard = () => {
             <input
               type="text"
               placeholder="Search by dish name"
-              className="form-control border border-warning"
+              className="form-control border border-warning rounded-5 text-center w-50"
               value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
+              onChange={(e) => setSearchText((e.target.value.toLowerCase()))}
             />
             <button type="submit" className="btn btn-primary bg-warning border-0 rounded-5 fs-4 fw-semibold " >
               Search
@@ -233,7 +250,8 @@ const RecipeCard = () => {
                   <span className="fs-2">🤍</span>
                 )}
               </button>
-              <button  className="btn border-0 btn-sm  mx-3 mb-3 fs-4">📂</button>
+              <button  className="btn border-0 btn-sm  mx-3 mb-3 fs-4"  onClick={() => handleSave(recipe)}>💾</button>
+              <button className="btn border-0 btn-sm  mx-3 mb-3 fs-4" onClick={() => shareToWhatsapp(recipe.dishName, recipe.link)} >➤</button>
               </div>
             </div>
           </div>

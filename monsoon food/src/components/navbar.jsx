@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router";
+import {  useNavigate } from "react-router";
+import { Link } from "react-router";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -31,29 +32,55 @@ const Navbar = () => {
           <div className="collapse navbar-collapse  " id="nav">
             <ul className="navbar-nav ms-auto fs-5 fw-semibold bg-warning bg-opacity-75 rounded-4 p-2 ">
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/">
+                <Link className="nav-link text-white"  
+                 to="/"  
+                 onClick={() => {
+      const nav = document.getElementById("nav");
+      if (nav && nav.classList.contains("show")) {
+        nav.classList.remove("show"); // manually collapse
+      }
+    }} >
                   Home🏡
                 </Link>
               </li>
               <li className="nav-item ">
                 <button
-                  className="btn btn-link nav-link text-white"
-                  to="/add-recipe"
-                  onClick={() => navigate("/add-recipe")}
+                  className="nav-link text-white "  
+                   data-bs-toggle="collapse"
+                      data-bs-target="#nav"
+                 
+                  onClick={() => {
+    navigate("/add-recipe"); // first navigate
+    const nav = document.getElementById("nav");
+    if (nav && nav.classList.contains("show")) {
+      nav.classList.remove("show"); // then collapse
+    }
+  }}
                 >Upload Recipe⬆️
                 
                 </button>
               </li>
               <li className="nav-item">
-                <Link className="nav-link text-white" to="/my-recipes">
+                <Link className="nav-link text-white" to="/my-recipes" 
+                  onClick={() => {
+      const nav = document.getElementById("nav");
+      if (nav && nav.classList.contains("show")) {
+        nav.classList.remove("show"); // manually collapse
+      }
+    }}>
                   My Recipes
                 </Link>
               </li>
               <li className="nav-item ">
                 <button
                   className="btn btn-link nav-link text-white"
-                  to="/login"
-                  
+                 onClick={() => {
+    navigate("/login"); // first navigate
+    const nav = document.getElementById("nav");
+    if (nav && nav.classList.contains("show")) {
+      nav.classList.remove("show"); // then collapse
+    }
+  }}
                 >
                  Login
                 </button>
